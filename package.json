@@ -26,5 +26,8 @@
   },
   "lint-staged": {
     "*.{js,css,md}": "prettier --write"
+  },
+  "engines": {
+    "yarn": "2.0.0-rc.29"
   }
 }
