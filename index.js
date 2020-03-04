@@ -1,5 +1,6 @@
 const { join } = require('path')
 const polka = require('polka')
+const cors = require('cors')
 const { json } = require('body-parser')
 const { v4: uuid } = require('uuid')
 
@@ -14,7 +15,7 @@ const dir = join(__dirname, 'public')
 const serve = require('serve-static')(dir)
 
 polka()
-  .use(serve, json())
+  .use(cors(), serve, json())
   .use(errorsHandler, responseHandler)
   .post('/reset', res => {
     init()
